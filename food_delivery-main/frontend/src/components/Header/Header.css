@@ -1,0 +1,125 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 95vh;
+    max-width: 2000px;
+    margin: 0px auto;
+    padding: 80px 50px;
+    background: url('/image.jpeg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-sizing: border-box;
+    
+  }
+  
+  .header-contents {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5vw;
+    animation: fadeIn 3s;
+  }
+  
+  .header-contents h3 {
+    color: #ffffff;
+    font-size: 25px;
+    font-style: italic;
+  }
+  
+  .header-contents h1 {
+    color: #ff0000;
+    font-size: 150px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+  
+  .header-contents h1 span {
+    color: #ffd500;
+  }
+  
+  .header-contents p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 8px 0;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .buttons .btn,
+  .buttons button {
+    background-color: #fff700;
+    color: #000000;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+  }
+  
+  .buttons .btn:hover,
+  .buttons button:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1050px) {
+    .header-contents {
+      max-width: 65%;
+    }
+  
+    .header-contents h1 {
+      font-size: 60px;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .header {
+      padding: 50px 30px;
+      height: auto;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+  
+    .header-contents {
+      max-width: 100%;
+    }
+  
+    .header-contents h1 {
+      font-size: 12vw;
+    }
+  
+    .header-contents h3 {
+      font-size: 20px;
+    }
+  
+    .header-contents p {
+      font-size: 16px;
+    }
+  
+    .buttons {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+  
+    .buttons .btn,
+    .buttons button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
