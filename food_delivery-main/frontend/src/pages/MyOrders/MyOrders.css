@@ -1,5 +1,8 @@
 .my-orders{
     margin: 50px 0px;
+    margin-top: 100px; 
+    width: 80%;
+    margin: auto;
     
 }
 .my-orders .container{

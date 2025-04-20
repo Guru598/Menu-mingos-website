@@ -1,6 +1,9 @@
 .verify{
     min-height: 60vh;
     display: grid;
+    width: 80%;
+  margin: auto;
+  margin-top: 100px; 
 }
 
 .verify .spinner{
