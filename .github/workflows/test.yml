@@ -21,6 +21,12 @@ jobs:
         run: |
           ls -R ./food_delivery-main
 
+      - name: Ensure package-lock.json is up-to-date
+        run: |
+          rm -f package-lock.json
+          npm install
+          git diff --exit-code || (echo "package-lock.json is outdated; please commit changes" && exit 1)
+
       - name: Install, Test and Build - Frontend
         working-directory: ./food_delivery-main/frontend
         run: |
