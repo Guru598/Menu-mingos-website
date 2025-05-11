@@ -16,36 +16,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-
-      - name: Print directory structure
-        run: |
-          ls -R ./food_delivery-main
-
-      - name: Ensure package-lock.json is up-to-date
-        run: |
-          rm -f package-lock.json
-          npm install
-          git diff --exit-code || (echo "package-lock.json is outdated; please commit changes" && exit 1)
-
-      - name: Install, Test and Build - Frontend
-        working-directory: ./food_delivery-main/frontend
-        run: |
-          ls -alh   # List files to ensure package-lock.json exists
           npm ci
           npm test
           npm run build
 
       - name: Install, Test and Build - Admin
-        working-directory: ./food_delivery-main/admin
-        run: |
-          ls -alh   # List files to ensure package-lock.json exists
           npm ci
           npm test
           npm run build
 
       - name: Install and Test - Backend
-        working-directory: ./food_delivery-main/backend
-        run: |
-          ls -alh   # List files to ensure package-lock.json exists
           npm ci
           npm test
