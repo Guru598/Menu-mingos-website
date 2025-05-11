@@ -25,14 +25,14 @@ jobs:
           npm run build
 
       - name: Install, Test and Build - Admin
-        working-directory: ./admin
+        working-directory: ./food_delivery-main/admin
         run: |
           npm ci
           npm test
           npm run build
 
       - name: Install and Test - Backend
-        working-directory: ./backend
+        working-directory: ./food_delivery-main/backend
         run: |
           npm ci
           npm test
