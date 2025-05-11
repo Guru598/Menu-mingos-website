@@ -18,7 +18,7 @@ jobs:
           node-version: "18"
 
       - name: Install, Test and Build - Frontend
-        working-directory: ./frontend
+        working-directory: ./food_delivery-main/frontend
         run: |
           npm ci
           npm test
