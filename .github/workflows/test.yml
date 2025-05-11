@@ -17,6 +17,14 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Cache node modules - Frontend
+        uses: actions/cache@v3
+        with:
+          path: ./food_delivery-main/frontend/node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('./food_delivery-main/frontend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
       - name: Install, Test and Build - Frontend
         working-directory: ./food_delivery-main/frontend
         run: |
@@ -24,12 +32,28 @@ jobs:
           npm test
           npm run build
 
+      - name: Cache node modules - Admin
+        uses: actions/cache@v3
+        with:
+          path: ./food_delivery-main/admin/node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('./food_delivery-main/admin/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
       - name: Install, Test and Build - Admin
         working-directory: ./food_delivery-main/admin
         run: |
           npm ci
           npm test
           npm run build
+
+      - name: Cache node modules - Backend
+        uses: actions/cache@v3
+        with:
+          path: ./food_delivery-main/backend/node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('./food_delivery-main/backend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
 
       - name: Install and Test - Backend
         working-directory: ./food_delivery-main/backend
