@@ -18,21 +18,18 @@ jobs:
           node-version: "18"
 
       - name: Install, Test and Build - Frontend
-        working-directory: ./frontend
         run: |
           npm ci
           npm test
           npm run build
 
       - name: Install, Test and Build - Admin
-        working-directory: ./admin
         run: |
           npm ci
           npm test
           npm run build
 
       - name: Install and Test - Backend
-        working-directory: ./backend
         run: |
           npm ci
           npm test
