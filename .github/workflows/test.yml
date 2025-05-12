@@ -19,21 +19,21 @@ jobs:
 
       # Frontend
       - name: Install, Test and Build - Frontend
-        working-directory: ./frontend
+        working-directory: food_delivery-main/frontend
         run: |
           npm ci
           npm run build
 
       # Backend
       - name: Install and Test - Backend
-        working-directory: ./backend
+        working-directory: food_delivery-main/backend
         run: |
           npm ci
 
 
       # Admin Frontend
       - name: Install, Test and Build - Admin
-        working-directory: ./admin
+        working-directory: food_delivery-main/admin
         run: |
           npm ci
           npm run build
