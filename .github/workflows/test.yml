@@ -17,24 +17,20 @@ jobs:
         with:
           node-version: "18"
 
-      # Frontend
-      - name: Install, Test and Build - Frontend
-        working-directory: food_delivery-main/frontend
+      - name: Install and Build - Frontend
+        working-directory: ./food_delivery-main/frontend
         run: |
           npm ci
           npm run build
 
-      # Backend
-      - name: Install and Test - Backend
-        working-directory: food_delivery-main/backend
+      - name: Install - Backend
+        working-directory: ./food_delivery-main/backend
         run: |
           npm ci
+          # npm test
 
-
-      # Admin Frontend
-      - name: Install, Test and Build - Admin
-        working-directory: food_delivery-main/admin
+      - name: Install and Build - Admin
+        working-directory: ./food_delivery-main/admin
         run: |
           npm ci
           npm run build
-
