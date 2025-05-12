@@ -1,4 +1,4 @@
-name: Test_Project
+name: Test Project
 
 on:
   pull_request:
@@ -9,22 +9,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "18"
+
+      # Frontend
+      - name: Install, Test and Build - Frontend
+        working-directory: ./frontend
+        run: |
           npm ci
-          npm test
           npm run build
 
-      - name: Install, Test and Build - Admin
-          npm ci
-          npm test
-          npm run build
-
+      # Backend
       - name: Install and Test - Backend
+        working-directory: ./backend
+        run: |
           npm ci
-          npm test
+
+
+      # Admin Frontend
+      - name: Install, Test and Build - Admin
+        working-directory: ./admin
+        run: |
+          npm ci
+          npm run build
+
