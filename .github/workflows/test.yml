@@ -26,7 +26,7 @@ jobs:
       - name: Install - Backend
         working-directory: ./food_delivery-main/backend
         run: |
-          npm ci
+          npm install
           npm install --save-dev jest babel-jest @babel/core @babel/preset-env @babel/preset-react @babel/plugin-transform-modules-commonjs
           npm test
 
