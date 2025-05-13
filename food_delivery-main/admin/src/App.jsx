@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import Navbar       from './components/Navbar/Navbar';
 import Sidebar      from './components/Sidebar/Sidebar';
@@ -7,7 +8,7 @@ import List         from './pages/List/List';
 import Orders       from './pages/Orders/Orders';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { url }      from './assets/assets';   // ← import hard‑coded URL
+import { url }      from './assets/assets';   // ← import the shared URL
 
 const App = () => (
   <div>

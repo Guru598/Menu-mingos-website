@@ -2,8 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import './List.css';
+import { assets, url } from '../../assets/assets';  // ← import url here
 
-const List = ({ url }) => {
+const List = () => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -40,9 +41,7 @@ const List = ({ url }) => {
     fetchList();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="list add flex-col">
@@ -55,19 +54,18 @@ const List = ({ url }) => {
           <b>Price</b>
           <b>Action</b>
         </div>
-        {list.length === 0 ? (
-          <div>No food items available.</div>
-        ) : (
-          list.map((item, index) => (
-            <div key={index} className="list-table-format">
-              <img src={`${url}/images/` + item.image} alt={item.name} />
+        {list.length === 0
+          ? <div>No food items available.</div>
+          : list.map((item, idx) => (
+            <div key={idx} className="list-table-format">
+              <img src={`${url}/images/${item.image}`} alt={item.name} />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>₹{item.price}</p>
               <p className="cursor" onClick={() => removeFood(item._id)}>X</p>
             </div>
           ))
-        )}
+        }
       </div>
     </div>
   );
