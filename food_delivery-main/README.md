@@ -1,15 +1,203 @@
-# food_delivery
+# Menu Mingos
 
-I Create Full Stack Food Delivery Website In React JS, MongoDB, Express, Node JS & Stripe
-complete food ordering website / app using React JS, MongoDB, Express, Node JS and Stripe payment gateway. In this Full Stack Food delivery app project we will create the Frontend website, Admin Panel and Backend server. 
-We will create the user authentication system so that anyone can create an account and login this food order website.
-We will create the shopping cart functionality so that user can add food items in their cart and order food from this app. We will also integrate the Stripe payment gateway to place the order and with online payment. Then we will create the order status update features also.
- 
-![1722576618822](https://github.com/user-attachments/assets/3b0f10b7-dcca-4afd-acaa-61d1cc842406)
-![1722576618532](https://github.com/user-attachments/assets/a1fd233a-20e5-413c-a26a-5b3c553f6570)
-![1722576615830](https://github.com/user-attachments/assets/62979ae3-2876-444c-8982-58e81e682b37)
-![1722576622132](https://github.com/user-attachments/assets/1e013722-1b11-4f66-b53a-9f5ef7325943)
-![1722576622077](https://github.com/user-attachments/assets/86865f6f-6bdf-4581-8089-23e3c03af013)
-![1722576621290](https://github.com/user-attachments/assets/021a5175-87bf-460f-aae7-8198e6d7e890)
-![1722576621147](https://github.com/user-attachments/assets/c5751cf1-5575-40d8-8051-206bfd274ac6)
-![1722576620360](https://github.com/user-attachments/assets/2ecb23dd-9e7b-4924-b78d-072787980cf2)
+Menu Mingos is a web-based canteen menu and order management system designed to streamline food ordering for students and staff in institutional environments. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), the platform digitizes the entire food ordering process, from menu browsing to order placement and token-based collection, enhancing efficiency for both users and administrators.
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [System Architecture](#system-architecture)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [DevOps & CI/CD](#devops--cicd)
+- [Testing](#testing)
+- [Screenshots](#screenshots)
+- [Team](#team)
+- [Future Enhancements](#future-enhancements)
+- [License](#license)
+
+---
+
+## Features
+
+- **User Authentication:** Secure login and registration with encrypted passwords.
+- **Menu Browsing:** View categorized daily menu items with images and descriptions.
+- **Order Placement:** Add items to cart, specify quantity, and place orders online.
+- **Token Generation:** Each order generates a unique alphanumeric token for collection.
+- **Real-Time Order Tracking:** Users can track their order status on the dashboard.
+- **Admin Dashboard:** Manage menu items, monitor orders, update statuses, and generate reports.
+- **Notifications:** Email/SMS notifications for order confirmations and updates.
+- **Responsive UI:** Optimized for both desktop and mobile devices.
+- **Security:** JWT-based authentication, input validation, and HTTPS support.
+
+---
+
+## Tech Stack
+
+| Layer        | Technology            |
+|--------------|----------------------|
+| Frontend     | React.js, HTML5, CSS3, JavaScript (ES6+), Axios |
+| Backend      | Node.js, Express.js  |
+| Database     | MongoDB, Mongoose    |
+| DevOps       | Git, GitHub, GitHub Actions, ESLint, Prettier   |
+| Testing      | Jest (JS), Postman   |
+
+---
+
+## System Architecture
+
+- **Frontend:** Built with React.js for a dynamic, responsive user experience.
+- **Backend:** RESTful APIs with Express.js handle business logic, authentication, and order processing.
+- **Database:** MongoDB stores users, menu items, orders, and tokens.
+- **Admin Panel:** Enables menu management, order monitoring, and report generation.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- npm
+- MongoDB (local or Atlas)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Guru598/Menu-mingos-website.git
+   cd Menu-mingos-website
+   ```
+
+2. **Install dependencies:**
+   - For backend:
+     ```bash
+     cd backend
+     npm install
+     ```
+   - For frontend:
+     ```bash
+     cd ../frontend
+     npm install
+     ```
+
+3. **Configure environment variables:**
+   - Create `.env` files in both backend and frontend as needed (see `.env.example` for reference).
+
+4. **Run the application:**
+   - Start MongoDB (locally or ensure Atlas is accessible).
+   - In backend:
+     ```bash
+     npm run dev
+     ```
+   - In frontend:
+     ```bash
+     npm start
+     ```
+
+5. **Access the app:**
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:5000`
+
+---
+
+## Project Structure
+
+```
+Menu-mingos-website/
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── .env
+│   └── ...
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── .env
+│   └── ...
+├── admin/ (if separate)
+├── .github/
+│   └── workflows/
+│       ├── lint.yml
+│       └── ci.yml
+└── README.md
+```
+
+---
+
+## DevOps & CI/CD
+
+- **GitHub Actions:** Automated workflows for linting (`lint.yml`) and CI (`ci.yml`) run on every push and pull request to `main`.
+- **Branching Strategy:** 
+  - `main` - production-ready code
+  - `dev` - active development
+  - `feature/*` - new features
+  - `bugfix/*` - patches and fixes
+- **Code Review:** All changes require pull requests and at least one approval.
+- **Semantic Versioning:** Releases are tagged as `MAJOR.MINOR.PATCH` (e.g., v1.0.0).
+
+---
+
+## Testing
+
+- **Unit & Integration Testing:** Jest for backend, manual and automated tests for frontend.
+- **Test Cases Include:**
+  - User registration and login
+  - Order placement and token generation
+  - SQL/NoSQL injection prevention
+  - Secure payment and HTTPS validation
+  - Stress and performance testing (e.g., 1000 concurrent users)
+- **Validation:** Both frontend and backend input validation, JWT authentication, and error handling.
+
+---
+
+## Screenshots
+
+> _Add screenshots of the Home page, Login, Signup, Menu, Cart, Orders, and Admin Dashboard here._
+
+---
+
+## Team
+
+- **Abhay Chougala** (1RVU23CSE013)
+- **Aditya Kumar** (1RVU23CSE029)
+- **Arjun Mallya Ullal** (1RVU23CSE074)
+- **Gururaj Acharya** (1RVU23CSE175)
+
+Guided by: **Prof. Harikumar SV**, School of Computer Science and Engineering, RV University
+
+---
+
+## Future Enhancements
+
+- Mobile app versions (Android/iOS)
+- QR code-based token scanning
+- Real-time inventory management
+- Advanced notification system (WebSockets/Firebase)
+- Role-based access control (RBAC)
+- AI-based menu recommendations
+- Offline support and PWA features
+- Dockerization and cloud deployment
+
+---
+
+## License
+
+This project is for academic purposes at RV University. For any reuse or extension, please contact the authors.
+
+---
+
+> _Menu Mingos: Digitizing and simplifying canteen food ordering for institutions._
+
+Citations:
+[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/21ed7013-4aff-4148-802f-ea554af79cf2/Agile_finalReportSEE.pdf
+[2] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/8620a294-705f-4172-8fb8-ebfbd2db784e/AgileDevOpsProject_reportSEE.pdf
+[3] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/21ed7013-4aff-4148-802f-ea554af79cf2/Agile_finalReportSEE.pdf
+[4] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/8620a294-705f-4172-8fb8-ebfbd2db784e/AgileDevOpsProject_reportSEE.pdf
+
+---
+Answer from Perplexity: pplx.ai/share
