@@ -4,26 +4,37 @@ import { assets } from '../../assets/assets';
 import { StoreContext } from '../context/StoreContext';
 
 const FoodItem = ({ id, name, price, description, image }) => {
- 
-  const {cartItems,addToCart,removeFromCart,url}=useContext(StoreContext);
+  const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
+
+  // Null or missing props return nothing
+  if (!id || !name || !price || !image) return null;
+
   return (
     <div className='food-item'>
       <div className='food-item-img-container'>
-        <img src={url+"/images/"+image} alt='' className='food-item-image' />
-        {!cartItems[id]
-        ?<img className='add' onClick={()=>addToCart(id)} src={assets.add_icon_white} alt=''/>
-        :<div className='food-item-counter'>
-          <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
-          <p>{cartItems[id]}</p>
-          <img onClick={()=>addToCart(id)} src={assets.add_icon_green} alt="" />
+        {/* Check if image exists, else provide fallback */}
+        <img 
+          src={image ? `${url}/images/${image}` : '/path/to/default-image.jpg'} 
+          alt={name} 
+          className='food-item-image' 
+        />
+        
+        {/* Cart action: Add or Remove */}
+        {!cartItems?.[id] ? (
+          <img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} alt='Add to cart' />
+        ) : (
+          <div className='food-item-counter'>
+            <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt='Remove from cart' />
+            <p>{cartItems[id]}</p>
+            <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt='Add more' />
           </div>
-
-        }
+        )}
       </div>
+
       <div className='food-item-info'>
         <div className='food-item-name-rating'>
           <p>{name}</p>
-          <img src={assets.rating_starts} alt='' />
+          <img src={assets.rating_starts} alt='Rating' />
         </div>
         <p className='food-item-desc'>{description}</p>
         <p className='food-item-price'>₹{price}</p>
