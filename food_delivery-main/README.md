@@ -191,13 +191,4 @@ This project is for academic purposes at RV University. For any reuse or extensi
 
 ---
 
-> _Menu Mingos: Digitizing and simplifying canteen food ordering for institutions._
 
-Citations:
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/21ed7013-4aff-4148-802f-ea554af79cf2/Agile_finalReportSEE.pdf
-[2] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/8620a294-705f-4172-8fb8-ebfbd2db784e/AgileDevOpsProject_reportSEE.pdf
-[3] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/21ed7013-4aff-4148-802f-ea554af79cf2/Agile_finalReportSEE.pdf
-[4] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/69478601/8620a294-705f-4172-8fb8-ebfbd2db784e/AgileDevOpsProject_reportSEE.pdf
-
----
-Answer from Perplexity: pplx.ai/share
